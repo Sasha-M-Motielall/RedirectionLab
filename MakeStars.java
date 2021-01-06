@@ -6,14 +6,12 @@ public class MakeStars{
     String currentWord = "";
 
     while(n.hasNextLine()){
-      while(n.hasNext()){
-        currentWord=n.next();
-        for(int i=0;i<currentWord.length();i++){
-          System.out.print("*");
-        }
-        System.out.print(" ");
-      }
-      System.out.print("\n");
-    }
-  }
+     Scanner m = new Scanner(n.nextLine());
+     while(m.hasNext()){
+       currentWord=m.next();
+       for(int i=0;i<currentWord.length();i++){
+         System.out.print("*");}
+       System.out.print(" ");}
+     System.out.print("\n");}
+ }
 }
