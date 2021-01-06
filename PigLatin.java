@@ -38,4 +38,21 @@ public class PigLatin{
     if(weird(b, st)){return st + "hay";}
     return st.substring(1) + st.charAt(0) + "ay";
   }
+
+  public static String pigLatinBest(String str){
+    str = str.toLowerCase();
+    String punc = "";
+    if(!Character.isLetter((Character)str.charAt(str.length()-1)) && !Character.isDigit((Character)str.charAt(str.length()-1)))
+      {punc=str.charAt(str.length()-1)+""; str=str.substring(0,str.length()-1);}
+    if(!Character.isLetter(str.charAt(0))){return str + punc;}
+    char[] d = new char[]{'a','e','i','o','u'};
+    String[] e = new String[]{"bl", "br", "ch", "ck", "cl", "cr", "dr", "fl",
+                              "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr",
+                              "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp",
+                              "st", "sw", "th", "tr", "tw", "wh", "wr"};
+    if(str.length()<=1){return str + "ay" + punc;}
+    if(weirder(e, str)){return str.substring(2) + str.substring(0,2) + "ay" + punc;}
+    if(weird(d, str)){return str + "hay" + punc;}
+    return str.substring(1) + str.charAt(0) + "ay" + punc;
+  }
 }
